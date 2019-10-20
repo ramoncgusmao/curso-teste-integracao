@@ -27,7 +27,7 @@ public class Leilao {
 	private List<Lance> lances;
 	
 	public Leilao() {
-		this.lances = new ArrayList<Lance>();
+		this.lances = new ArrayList<>();
 		this.dataAbertura = Calendar.getInstance();
 	}
 	

@@ -92,9 +92,9 @@ public class LeilaoDao {
 	}
 	
 	public double getValorInicialMedioDoUsuario(Usuario usuario) {
-		return (Double) session.createQuery("select avg(lance.leilao.valorInicial) " +
-											"from Lance lance " +
-											"where lance.usuario = :usuario")
+		return (Double) session.createQuery("select avg(leilao.valorInicial) " + 
+												" from Leilao leilao " + 
+												" where leilao.id in (select lance.leilao.id from Lance lance where lance.usuario = :usuario)")
 					.setParameter("usuario", usuario)
 					.uniqueResult();
 	}
